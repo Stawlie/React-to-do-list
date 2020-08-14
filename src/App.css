@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital@1&display=swap');
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #202124;
+    color: #fff;
+}
+
+.container {
+    max-width: 1092px;
+    margin: 0 auto;
+}

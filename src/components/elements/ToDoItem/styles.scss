@@ -1,0 +1,44 @@
+.to-do-list__item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #292a2d;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  -webkit-appearance: none;
+  background-color: transparent;
+  padding: 9px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  margin: 0 10px 0 0;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #202124;
+  }
+
+  &:checked:after {
+    content: '\2714';
+    font-size: 20px;
+    position: absolute;
+    transform: translate(-4px, -11px);
+    color: white;
+  }
+}
+
+.to-do-text {
+  word-wrap: break-word;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+
+  &.line-through {
+    text-decoration: line-through;
+  }
+}

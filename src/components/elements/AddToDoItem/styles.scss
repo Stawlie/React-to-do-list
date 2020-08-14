@@ -1,0 +1,60 @@
+.to-do-list__item.add-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plus {
+  min-width: 30px !important;
+  min-height: 30px !important;
+  border: 2px solid orange;
+  border-radius: 50%;
+  margin-right: 10px;
+  color: white;
+  transition: all .3s;
+}
+
+.plus.rotate {
+  transform: rotate(-90deg);
+}
+
+.add-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-text {
+  color: #fff;
+  border: none;
+  width: 80%;
+  border-bottom: 2px solid #fff;
+  background-color: #292a2d;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+.add-button {
+  color: #fff;
+  background-color: #292a2d;
+  border: 2px solid orange;
+  border-radius: 4px;
+  margin-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+
+  &:hover {
+    background-color: orange;
+    color: black;
+    cursor: pointer;
+  }
+
+  &.btn-disabled {
+    opacity: .4;
+
+    &:hover {
+      background-color: #292a2d;
+      cursor: default;
+      color: white;
+    }
+  }
+}

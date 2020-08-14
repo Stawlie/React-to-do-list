@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital@1&display=swap');
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .header-title {
+    color: orange;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    text-align: center;
+  }
+}

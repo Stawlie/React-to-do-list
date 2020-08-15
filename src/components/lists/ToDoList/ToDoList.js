@@ -3,28 +3,52 @@ import "./styles.scss"
 import ToDoItem from "../../elements/ToDoItem/ToDoItem";
 import AddToDoItem from "../../elements/AddToDoItem/AddToDoItem";
 
-const data = ['Какой-то текст', 'Что-то ещё сделать']
-
 class ToDoList extends React.Component {
 
     state = {
-        items: data
+        status: this.props.status
     }
+
+    componentDidUpdate() {
+        this.addStorage();
+    }
+
     renderItems() {
-        return this.state.items.map((item, index) => <ToDoItem key={index} data={item}/>)
+        return this.state.status.map((item, index) => <ToDoItem key={index} status={item} doneItem={this.doneItem} delItem={this.delItem}/>)
     }
 
     addItem = (text) => {
         this.setState({
-            items: [...this.state.items, text]
+            status: [...this.state.status, {text, done: false}]
         })
+    }
+
+    doneItem = (done, text) => {
+        const oldStatus = [...this.state.status]
+        oldStatus.forEach(item => {
+            if (item.text === text) {
+                item.done = done;
+            }
+        })
+        this.setState({
+            status: oldStatus
+        })
+    }
+
+    addStorage() {
+        localStorage.setItem('to-do-list', JSON.stringify(this.state.status))
+    }
+
+    delItem = (elem) => {
+        localStorage.setItem('to-do-list', JSON.stringify([...this.state.status].filter(item => item.text !== elem.text)))
+        window.location.reload(false);
     }
 
     render() {
         return (
             <div className={'to-do-list'}>
                 {this.renderItems()}
-                <AddToDoItem addItem={this.addItem}/>
+                <AddToDoItem addItem={this.addItem} />
             </div>
         )
     }

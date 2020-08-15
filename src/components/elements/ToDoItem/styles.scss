@@ -1,17 +1,39 @@
 .to-do-list__item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
   background-color: #292a2d;
   border: 2px solid #ccc;
   border-radius: 4px;
   margin-bottom: 5px;
   overflow: hidden;
+
+  &:hover .close {
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+.to-do-list__item-text {
+  display: flex;
+  align-items: center;
+}
+
+.close {
+  min-width: 30px !important;
+  min-height: 30px !important;
+  border: 2px solid orange;
+  border-radius: 50%;
+  margin-right: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all .3s;
+  transform: scale(0) rotate(45deg);
 }
 
 .checkbox {
-  width: 30px;
-  height: 30px;
+  min-width: 30px !important;
+  min-height: 30px !important;
   -webkit-appearance: none;
   background-color: transparent;
   padding: 9px;

@@ -40,11 +40,12 @@ class AddToDoItem extends React.Component {
                         value={this.state.value}
                         onFocus={this.rotatePlus}
                         onBlur={this.rotatePlus}
+                        placeholder={'Add here your evil plans :)'}
                     />
                     <input
                         type={'button'}
                         className={`add-button ${this.state.value === '' ? 'btn-disabled' : ''}`}
-                        value={'Добавить'}
+                        value={'Add plan'}
                         disabled={!this.state.value}
                         onClick={this.clickHandler}
                     />

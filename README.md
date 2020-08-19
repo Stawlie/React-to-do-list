@@ -1,3 +1,5 @@
+Check it out! https://stawlie.github.io/React-to-do-list/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
